@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fixed-Width Page</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    } body {
+        background: whitesmoke;
+    } #page {
+        width: 1024px;
+        height: 1525px;
+        background: gray;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+        margin: 24px auto;
+    } #textbox {
+        width: 768px;
+        height: 768px;
+        margin: 48px auto;
+        border: 1px dashed gray;
+    } #banner {
+        width: 1024px;
+		height: 200px;
+    } h1 {
+        font: 48pt/1.4em Ops;
+        text-align: center;
+        margin: 54px 0 0 0;
+        color: #FD00EC;
+        text-shadow: 2px 3px 6px cyan;
+    } p {
+        font: 14pt/1.4em Georgia;
+        width: 768px;
+		color: white;
+        margin: 24px auto;
+        padding-bottom: 175px;
+    } img.float-left {
+        width: 300px;
+        float: left;
+        margin: 0 24px 0 0;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+    } ul {
+        width: 100%;
+        margin-top: -4px;
+	}
+    } a li {
+        color: black;
+    } a {
+        text-decoration: none;
+    } li:hover, a li:hover {
+        background: rgba(169,225,245,0.50);
+	} video {
+		height: 400px;
+		margin: 0 auto;
+		display: block;
+		border: 1px solid dimgray;
+		box-shadow: 2px 3px 6px gray;
+		
+	} figcaption {
+		font: 18pt/1.4em Georgia;
+		text-align: center;
+	    margin: 15px auto;
+		color: aliceblue
+	} @font-face{
+		font-family: Ops;
+		src: url("BlackOpsOne-Regular.ttf")
+	}
+</style>
+</head>
+
+<body>
+    <div id="page">
+        <img id="banner" src= "2a.png"  />
+        <h1>About Me</h1>
+        <p><img class="float-left" src="IMG_0020.PNG" />
+            Welcome! I'm Yihao.
+
+<br>Currently navigating my junior year as a Graphic Design major at UNLV, I spend my time exploring the intersection of strategy and aesthetics. I believe great design isn't just about making things look good—it's about creating meaningful connections.</p>
+		<figure>
+		<video poster="IMG_0035.PNG" controls="controls">
+			<source src= "Introduction.MP4">
+		</video>
+			<figcaption>Welcome to my website, and enjoy</figcaption>
+		</figure>
+   </div>
+</body>
+</html>
