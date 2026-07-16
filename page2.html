@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fixed-Width Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+	@font-face {
+		font-family: Geo;
+		src:url("Georgia.ttf")
+	}
+	@font-face{
+		font-family: Ops;
+		src:url("BlackOpsOne-Regular.ttf")
+	} * {
+        margin: 0;
+        padding: 0;
+    } body {
+        background: whitesmoke;
+		min-height: 100vh;
+        position: relative;
+    } #page {
+        width: 1024px;
+        height: 1525px;
+        background: white;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+        margin: 24px auto;
+    } #textbox {
+        width: 768px;
+        height: 768px;
+        margin: 48px auto;
+        border: 1px dashed gray;
+    } #banner {
+        width: 1024px;
+    } h1 {
+        font: 48pt/1.4em Ops;
+        text-align: center;
+        margin: 54px 0 0 0;
+        color: #89cdc6;
+        text-shadow: 2px 3px 6px #e12885;
+    } p {
+        font: 14pt/1.4em Georgia;
+        width: 768px;
+        margin: 24px auto;
+        padding-bottom: 175px;
+    } img.float-left {
+        width: 300px;
+        float: left;
+        margin: 0 24px 0 0;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+    } ul {
+        width: 100%;
+		display: flex;
+		justify-content: space-around;
+		margin: 0 auto;
+		padding: 0px auto;
+	}li {
+        font: 14pt/2.0em Georgia;
+		flex:1;
+        list-style: none;
+        text-align: center;
+        background: #39C5BB;
+		height: 40px;
+    } a li {
+        color: black;
+    } a {
+        text-decoration: none;
+    } li:hover, a li:hover {
+        background: #39FFD5;
+    } #arrow {
+        width: 75px;
+        height: 75px;
+        margin: 76px 0 0 24px;
+		position: absolute; 
+		bottom:15px;
+		left: 570px;
+    } 
+</style>
+</head>
+
+<body>
+    <div id="page">
+        <img src="2a.png" height="300" id="banner" />
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>Portfolio</li>
+			<li><a href="page3.html">My Favorite Character</a></li>
+		</ul>
+
+        <h1>Portfolio</h1>
+        <p><img class="float-left" src="bausenhart.jpeg" />
+            The BFA is a 501(c)3 non-profit association dedicated to the advancement of the sport and science of lighter-than-air aviation, both hot air and gas balloons. Founded in 1961, membership in the BFA is open to anyone who shares a fascination with Lighter Than Air flight.</p>
+		<a href="#banner"><img id="arrow" src="arrow.png"></a>
+    </div>
+</body>
+</html>
