@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Liang's Tour</title>
+<style>
+	@font-face {
+		font-family: Geo;
+		src:url("Georgia.ttf")
+	}
+	@font-face{
+		font-family: Ops;
+		src:url("BlackOpsOne-Regular.ttf")
+	} * {
+        margin: 0;
+        padding: 0;
+    } body {
+        background: whitesmoke;
+		min-height: 100vh;
+        position: relative;
+    } #page {
+        width: 1024px;
+        height: 1525px;
+        background: white;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+        margin: 24px auto;
+    } #banner {
+        width: 1024px;
+    } h1 {
+        font: 48pt/1.4em Ops;
+        text-align: center;
+        margin: 54px 0 0 0;
+        color: #89cdc6;
+        text-shadow: 2px 3px 6px #e12885;
+    } p {
+        font: 14pt/1.4em Geo;
+        width: 768px;
+        margin: 24px auto;
+        padding-bottom: 175px;
+	} ul {
+        width: 100%;
+		display: flex;
+		justify-content: space-around;
+		margin: 0 auto;
+		padding: 0px auto;
+	} li {
+        font: 14pt/2.0em Geo;
+        list-style: none;
+		flex: 1;
+        text-align: center;
+        background: #39C5BB;
+		height: 40px;
+    } a li {
+        color: black;
+    } a {
+        text-decoration: none;
+    } li:hover, a li:hover {
+        background: #39FFD5;
+	} main {
+        width: 768px;
+        height: 768px;
+        margin: 10px auto;
+        // border: 1px dashed gray;
+        display: grid;
+        grid-gap: 1px;
+        grid-template: repeat(3,256px) / repeat(2,384px);
+	} figcaption {
+		font: 14pt/1.4em Geo;
+		text-align: center;
+	    margin: 30px 0 0 0;
+	} main img {
+        width: 384px;
+    } main img:nth-child(1) {
+        grid-area: 1/1/2/2;
+    } main img:nth-child(2) {
+        grid-area: 2/1/3/2;
+    } main img:nth-child(3) {
+        grid-area: 3/1/4/2;
+    } main img:nth-child(4) {
+        grid-area: 1/2/2/4;
+    } main p {
+        font: 14pt/1.4em Geo, serif;
+        margin-bottom: 12px;
+	}
+</style>
+</head>
+
+<body>
+    <div id="page">
+        <img src="2a.png" height="300" id="banner" />
+		<ul>
+            <li><a href="index.html">Home</a></li>
+			<li><a href="page2.html">Portfolio</a></li>
+			<li><a href="page4.html">Data</a></li>
+			<li>Study Abroad Tour</li>
+			<li><a href="page3.html">Favorite Character</a></li>
+		</ul>
+		<h1>Study Abroad in Japan</h1>
+		<figure>
+			<figcaption>Animals I Encountered While Studying in Japan</figcaption>
+		<main>
+			<img src="lu.jpg" height="256"/>
+			<img src="gou.jpg" height="256"/>
+			<img src="ya.jpg" height="254" />
+			<img src="he.jpg" height="768"/>
+		</main>
+		</figure>
+    </div>
+</body>
+</html>

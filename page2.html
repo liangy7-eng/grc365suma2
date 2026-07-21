@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Liang's Portfolio</title>
+<style>
+	@font-face {
+		font-family: Geo;
+		src:url("Georgia.ttf")
+	}
+	@font-face{
+		font-family: Ops;
+		src:url("BlackOpsOne-Regular.ttf")
+	} * {
+        margin: 0;
+        padding: 0;
+    } body {
+        background: whitesmoke;
+		min-height: 100vh;
+        position: relative;
+    } #page {
+        width: 1024px;
+        height: 1525px;
+        background: white;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+        margin: 24px auto;
+    } #textbox {
+        width: 1024px;
+        height: 512px;
+        margin-top: 50px;
+        background: whitesmoke;
+        box-shadow: 2px 3px 6px gainsboro;
+        border: 1px solid gainsboro;
+        display: flex;
+        justify-content: center;
+    } figure {
+        margin: 24px;
+	} img:not(#banner), .zoom {
+        width: 200px;
+        height: 200px;
+        border: 1px solid gray;
+        box-shadow: 2px 3px 6px gray;
+        transition: transform 0.5s;
+    } figcaption {
+        font: 12pt/1.4em Geo;
+        margin-top: 3px;
+		text-align: center;
+    } .zoom {
+        background: url("thumb-tulip.jpg");
+        background-size: 100%;
+        background-position: center;
+	} #banner {
+        width: 1024px;
+    } h1 {
+        font: 48pt/1.4em Ops;
+        text-align: center;
+        margin: 54px 0 0 0;
+        color: #89cdc6;
+        text-shadow: 2px 3px 6px #e12885;
+    } p {
+        font: 14pt/1.4em Geo;
+        width: 768px;
+        margin: 24px auto;
+        padding-bottom: 175px;
+    } img.float-left {
+        width: 300px;
+        float: left;
+        margin: 0 24px 0 0;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+    } ul {
+        width: 100%;
+		display: flex;
+		justify-content: space-around;
+		margin: 0 auto;
+		padding: 0px auto;
+	}li {
+        font: 14pt/2.0em Geo;
+		flex:1;
+        list-style: none;
+        text-align: center;
+        background: #39C5BB;
+		height: 40px;
+    } a li {
+        color: black;
+    } a {
+        text-decoration: none;
+    } li:hover, a li:hover {
+        background: #39FFD5;
+    } img:not(#banner):hover {
+        transform: scale(1.03);
+        transition: transform 0.5s;
+    } .zoom:hover {
+        background-size: 105%;
+        transition: background-size 0.5s;
+	}
+</style>
+</head>
+
+<body>
+	<div id="page">
+        <img src="2a.png" height="300" id="banner" />
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>Portfolio</li>
+			<li><a href="page4.html">Data</a></li>
+			<li><a href="page5.html">Study Abroad Tour</a></li>
+			<li><a href="page3.html">Favorite Character</a></li>
+		</ul>
+
+        <h1>Portfolio</h1>
+       <div id="textbox">
+		<figure>
+            <a href= "IMG_0020.PNG">
+            <img src="IMG_0020.PNG" />
+            </a>
+            <figcaption>
+            Band Logo
+            </figcaption>
+        </figure>
+        <figure>
+            <a href= "paint.jpg">
+				<img src= "paint1.jpg">
+            </a>
+            <figcaption>
+            Painting
+            </figcaption>
+        </figure>
+		   <figure>
+            <a href= "P2.jpg">
+            <img src="P21.jpg" />
+            </a>
+            <figcaption>
+            Company Logo
+            </figcaption>
+        </figure>
+		   <figure>
+            <a href= "N1.jpg">
+            <img src="N11.jpg" />
+            </a>
+            <figcaption>
+            Icon
+            </figcaption>
+        </figure>
+    </div>
+		 </div>
+	</body>
+</html>
