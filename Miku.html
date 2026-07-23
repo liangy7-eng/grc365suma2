@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liang's Favorite Character</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+<style>
+     @font-face {
+        font-family: Ops;
+        src: local('Black Ops One');
+    } @font-face {
+        font-family: Geo;
+        src: local('Playfair Display'), local('Georgia');
+    } * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    } body {
+        background: whitesmoke;
+        min-height: 100vh;
+        position: relative;
+        font-family: Geo, serif;
+    } #page {
+        width: 1024px;
+        min-height: 1525px;
+        background: white;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+        margin: 24px auto;
+        padding-bottom: 60px;
+        position: relative;
+    }  #banner {
+        width: 100%;
+    } ul {
+        width: 100%;
+        list-style: none;
+        background: #39C5BB;
+        display: flex;
+        position: relative;
+        z-index: 100;
+    } ul > a, ul > li {
+        flex: 1;
+        text-align: center;
+    } li {
+        font: 14pt/2.0em Geo, serif;
+        list-style: none;
+        text-align: center;
+        background: #39C5BB;
+        height: 40px;
+        line-height: 40px;
+        color: black;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    } a {
+        text-decoration: none;
+        color: black;
+        display: block;
+    }  li:hover, a li:hover {
+        background: #39FFD5;
+    } ul li ul {
+        display: none;
+        position: absolute;
+        width: 204.8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    } ul li:hover ul {
+        display: block;
+    } ul li ul li {
+        width: 100%;
+        float: none;
+        background: #39C5BB;
+    } h1 {
+        font: 48pt/1.4em 'Black Ops One', Ops, cursive;
+        text-align: center;
+        margin: 60px 0 10px 0;
+        color: #89cdc6;
+        text-shadow: 2px 3px 6px #e12885, 0 0 10px rgba(0,0,0,0.1);
+		margin-top: 100px
+    } h2 {
+        font: 13pt/1.4em Geo, serif;
+        font-style: italic;
+        text-align: center;
+        color: #555;
+        margin-bottom: 40px;
+    } h2 a {
+        display: inline;
+        color: #e12885;
+        text-decoration: underline;
+    } p {
+        font: 14pt/1.7em 'Lora', Geo, serif;
+        width: 820px;
+        margin: 24px auto;
+        color: #222;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 24px;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        clear: both;
+    } p.intro::first-letter {
+        font-family: 'Black Ops One', Ops, display;
+        font-size: 3.8rem;
+        float: left;
+        line-height: 0.8;
+        margin-right: 12px;
+        margin-top: 4px;
+        color: #e12885;
+        text-shadow: 1px 2px 3px rgba(0,0,0,0.15);
+    } blockquote.pull-quote {
+        width: 820px;
+        margin: 32px auto;
+        padding: 20px 30px;
+        border-left: 5px solid #39C5BB;
+        background: #f4fbfb;
+        font: italic 16pt/1.6em 'Playfair Display', Geo, serif;
+        color: #2c524f;
+        box-shadow: 2px 3px 6px rgba(0,0,0,0.05);
+    } img.float-left {
+        width: 340px;
+        float: left;
+        margin: 0 24px 12px 0;
+        border: 1px solid darkgray;
+        box-shadow: 3px 4px 8px rgba(0,0,0,0.2);
+        border-radius: 4px;
+	} .image-card-right {
+        width: 780px;
+        margin: 40px auto 20px auto;
+        position: relative;
+	} img.float-right {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+        object-fit: cover;
+        border: 1px solid darkgray;
+        box-shadow: 3px 4px 10px rgba(0,0,0,0.25);
+        border-radius: 4px;
+    } figcaption {
+        font: italic 12pt/1.4em Geo, serif;
+        text-align: center;
+        margin-top: 10px;
+        color: #555;
+    }  .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+</head>
+
+<body>
+<div id="page">
+    <img src="2a.png" height="300" id="banner"/>
+    <ul>
+        <a href="index.html">
+            <li>Home</li>
+        </a>
+        <li>Portfolio
+            <ul>
+                <a href="Exhibition.html">
+                    <li>Exhibition</li>
+                </a>
+                <a href="Data.html">
+                    <li>Data</li>
+                </a>
+            </ul>
+        </li>
+        <a href="Contact.html">
+            <li>Contact</li>
+        </a>
+        <a href="Study Abroad.html">
+            <li>Study Abroad Tour</li>
+        </a>
+        <li>Favorite Character</li>
+    </ul>
+
+    <h1>Who is Hatsune Miku</h1>
+    <h2>Created with <a href="https://chatgpt.com/">ChatGPT</a> and Canva</h2>
+
+    <p class="intro clearfix">
+        <img src="Miku.jpg" class="float-left" width="410" alt="Hatsune Miku Portrait"/>
+        &ldquo;Hatsune Miku&rdquo; &mdash; whose name translates to &ldquo;the first sound of the future&rdquo; &mdash; is a virtual singer created by the Japanese company Crypton Future Media in 2007. She isn&rsquo;t a real person; she is an iconic character whose singing voice is digitally synthesized using Vocaloid technology.
+        <br><br>
+        Her signature design elements feature:
+        <br>
+        &bull; Long, vibrant turquoise twin-tails floating effortlessly.<br>
+        &bull; A futuristic outfit with a sleek gray sleeveless top, black pleated skirt, and teal accents.<br>
+        &bull; An energetic, cheerful presence that fans around the world continuously redefine.
+    </p>
+    <blockquote class="pull-quote">
+        &ldquo;What truly makes Hatsune Miku unique is that her music belongs entirely to her community. She is a collaborative open canvas for human creativity.&rdquo;
+    </blockquote>
+
+    <p>
+        Producers and fans write original songs, program her vocals, and share music online. Thousands of original tracks span every imaginable music genre &mdash; from upbeat pop and rock to synth-wave electronic beats and grand orchestral symphonies.
+    </p>
+    <div class="image-card-right">
+        <img src="live.jpg" width="750" height="400" class="float-right" alt="Hatsune Miku Live Concert Performance">
+        <figcaption>&mdash; Hatsune Miku performing live as a high-definition 3D hologram before thousands of fans &mdash;</figcaption>
+    </div>
+</div>
+</body>
+</html>
