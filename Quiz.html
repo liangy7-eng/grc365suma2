@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Liang's Quiz</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+<style>
+    @font-face {
+		font-family: Geo;
+		src:url("Georgia.ttf")
+	}
+	@font-face{
+		font-family: Ops;
+		src:url("BlackOpsOne-Regular.ttf")
+	} * {
+        margin: 0;
+        padding: 0;
+    } body {
+        background: whitesmoke;
+		min-height: 100vh;
+        position: relative;
+    } #page {
+        max-width: 1024px;
+		width: 100%;
+        min-height: 1525px;
+        background: white;
+        border: 1px solid darkgray;
+        box-shadow: 2px 3px 6px darkgray;
+        margin: 24px auto;
+    } #banner {
+        width: 100%;
+        max-width: 100%;
+    } ul {
+        width: 100%;
+		max-width: 100%;
+	}li {
+        font: 14pt/2.0em Geo;
+        list-style: none;
+        text-align: center;
+        background: #39C5BB;
+		height: 40px;
+		width: 20%;
+		float:left;
+    } a li {
+        color: black;
+		text-decoration: none;
+    } a {
+        text-decoration: none;
+    } li:hover, a li:hover {
+        background: #39FFD5;
+	} ul li ul li {
+        visibility: hidden;
+        width: 100%;
+        float: none;
+    } ul li:hover li {
+        visibility: visible;
+    } h1 {
+        font: 48pt/1.4em 'Black Ops One', Ops, cursive;
+        text-align: center;
+        margin: 60px 0 10px 0;
+        color: #89cdc6;
+        text-shadow: 2px 3px 6px #e12885, 0 0 10px rgba(0,0,0,0.1);
+        margin-top: 125px;
+    } h2 {
+        font: 13pt/1.4em Geo, serif;
+        font-style: italic;
+        text-align: center;
+        color: #555;
+        margin-bottom: 40px;
+    } h2 a {
+        display: inline;
+        color: #e12885;
+        text-decoration: underline;
+    } p {
+        font: 14pt/1.7em 'Lora', Geo, serif;
+        margin: 24px auto;
+        color: #222;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 24px;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        clear: both;
+        max-width: 100%;
+        width: 90%;
+    } p.intro::first-letter {
+        font-family: 'Black Ops One', Ops, display;
+        font-size: 3.8rem;
+        float: left;
+        line-height: 0.8;
+        margin-right: 12px;
+        margin-top: 4px;
+        color: #e12885;
+        text-shadow: 1px 2px 3px rgba(0,0,0,0.15);
+    } blockquote.pull-quote {
+        width: 820px;
+        margin: 32px auto;
+        padding: 20px 30px;
+        border-left: 5px solid #39C5BB;
+        background: #f4fbfb;
+        font: italic 16pt/1.6em 'Playfair Display', Geo, serif;
+        color: #2c524f;
+        box-shadow: 2px 3px 6px rgba(0,0,0,0.05);
+        max-width: 100%;
+    } .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    } @media (max-width: 750px) {
+        li {
+            width: 100%;
+            float: none;
+        } img {
+            float: none;
+            width: 100%;
+            margin: 0 0 20px 0;
+        } p {
+            font-size: 16pt;
+            line-height: 1.7em;
+            width: 90%;
+		}
+    } .lightstick-wrapper {
+        position: fixed;
+        bottom: 20px;
+        z-index: 999;
+        pointer-events: none;
+        width: 60px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform-origin: bottom center;
+        animation: cssSway 2.4s ease-in-out infinite;
+    } .lightstick-left {
+        left: calc(50% - 580px);
+    } .lightstick-right {
+        right: calc(50% - 580px);
+    } .ls-cap {
+        width: 16px;
+        height: 8px;
+        background: #e12885;
+        border-radius: 8px 8px 0 0;
+    } .ls-tube {
+        width: 18px;
+        height: 130px;
+        background: linear-gradient(to right, #39C5BB, #ffffff 50%, #39FFD5);
+        border-radius: 9px;
+        animation: cssGlow 2.4s ease-in-out infinite;
+    } .ls-ring {
+        width: 22px;
+        height: 10px;
+        background: #39C5BB;
+        border-radius: 2px;
+        border-bottom: 3px solid #e12885;
+        margin-top: 2px;
+    } .ls-handle {
+        width: 18px;
+        height: 70px;
+        background: linear-gradient(to right, #1a1a1a, #4d4d4d 50%, #2a2a2a);
+        border-radius: 0 0 6px 6px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    } .ls-handle::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        width: 7px;
+        height: 7px;
+        background: #39FFD5;
+        border-radius: 50%;
+        box-shadow: 0 0 6px #39FFD5;
+    } .ls-strap {
+        width: 12px;
+        height: 20px;
+        border: 2px solid #e12885;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+    } @keyframes cssSway {
+        0%, 100% {
+            transform: rotate(-16deg);
+        }
+        50% {
+            transform: rotate(16deg);
+        }
+    } @keyframes cssGlow {
+        0%, 100% {
+            box-shadow: 0 0 12px #39C5BB, 0 0 25px #39C5BB, inset 0 0 4px #ffffff;
+            opacity: 0.85;
+        }
+        50% {
+            box-shadow: 0 0 22px #39FFD5, 0 0 45px #39FFD5, inset 0 0 8px #ffffff;
+            opacity: 1;
+        }
+    } @media (max-width: 1200px) {
+        .lightstick-wrapper {
+            display: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+
+<div class="lightstick-wrapper lightstick-left">
+    <div class="ls-cap"></div>
+    <div class="ls-tube"></div>
+    <div class="ls-ring"></div>
+    <div class="ls-handle"></div>
+    <div class="ls-strap"></div>
+</div>
+
+
+<div class="lightstick-wrapper lightstick-right">
+    <div class="ls-cap"></div>
+    <div class="ls-tube"></div>
+    <div class="ls-ring"></div>
+    <div class="ls-handle"></div>
+    <div class="ls-strap"></div>
+</div>
+
+<div id="page">
+    <img src="2a.png" height="300" id="banner"/>
+    <ul>
+        <a href="index.html">
+            <li>Home</li>
+        </a>
+        <li>Portfolio
+            <ul>
+                <a href="Exhibition.html">
+                    <li>Exhibition</li>
+                </a>
+                <a href="Data.html">
+                    <li>Data</li>
+                </a>
+            </ul>
+        </li>
+        <a href="Contact.html">
+            <li>Contact</li>
+        </a>
+        <a href="Study Abroad.html">
+            <li>Study Abroad Tour</li>
+        </a>
+        <li>Favorite Character
+			<ul>
+				<a href= "Miku.html"><li>About</li></a>
+				<li>Quiz</li>
+	</ul>
+		</li>
+    </ul>
+	<h1>Miku Quiz</h1>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const style = document.createElement("style");
+  style.textContent = `
+    #miku-game-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #f7ffff;
+      border: 2px solid #39C5BB;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+      text-align: center;
+      clear: both;
+    }
+    #miku-game-container h2 {
+      color: #2b7a78;
+      margin-bottom: 8px;
+      font-size: 24px;
+    }
+    #miku-game-container p.game-desc {
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .options-pool {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      min-height: 50px;
+      padding: 16px;
+      background: #e6f7f5;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+    .drag-item {
+      background: #39C5BB;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 20px;
+      cursor: grab;
+      font-weight: bold;
+      font-size: 14px;
+      user-select: none;
+      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .drag-item:hover {
+      background: #39FFD5;
+      color: #222;
+      transform: translateY(-2px);
+    }
+    .drag-item.dragging {
+      opacity: 0.4;
+    }
+    .questions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .question-card {
+      background: white;
+      border: 1px solid #cceeee;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+    .question-text {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+    .drop-target {
+      border: 2px dashed #39C5BB;
+      border-radius: 6px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 14px;
+      background: #fafafa;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .drop-target.drag-over {
+      background: #e0f7f5;
+      border-color: #2b7a78;
+    }
+    .drop-target.correct {
+      border-style: solid;
+      border-color: #2ecc71;
+      background: #e8f8f0;
+      color: #27ae60;
+      font-weight: bold;
+    }
+    .game-status {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2b7a78;
+      margin-top: 15px;
+    }
+    #reset-btn {
+      margin-top: 15px;
+      padding: 10px 24px;
+      background: #39C5BB;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      display: none;
+      transition: background 0.2s;
+    }
+    #reset-btn:hover {
+      background: #2b7a78;
+    }
+  `;
+  document.head.appendChild(style);
+  const quizData = [
+    { id: "ans1", text: "Leek / Green Onion", question: "What is Hatsune Miku's signature item?" },
+    { id: "ans2", text: "2007", question: "In which year was Hatsune Miku officially released?" },
+    { id: "ans3", text: "Teal / Cyan", question: "What is Hatsune Miku's iconic hair color?" },
+    { id: "ans4", text: "Crypton Future Media", question: "Which company created Hatsune Miku?" }
+  ];
+  const pageContainer = document.getElementById("page");
+  if (!pageContainer) return;
+
+  const gameContainer = document.createElement("div");
+  gameContainer.id = "miku-game-container";
+  const shuffledOptions = [...quizData].sort(() => Math.random() - 0.5);
+
+  const optionsHTML = shuffledOptions
+    .map(item => `<div class="drag-item" draggable="true" id="${item.id}">${item.text}</div>`)
+    .join("");
+
+  const questionsHTML = quizData
+    .map((item, idx) => `
+      <div class="question-card">
+        <div class="question-text">${idx + 1}. ${item.question}</div>
+        <div class="drop-target" data-answer="${item.id}">Drag answer here</div>
+      </div>
+    `)
+    .join("");
+
+  gameContainer.innerHTML = `
+    <h2>🎵 Hatsune Miku Trivia Game 🎵</h2>
+    <p class="game-desc">Drag the correct answer box into its matching question below!</p>
+    <div class="options-pool" id="options-pool">${optionsHTML}</div>
+    <div class="questions-grid">${questionsHTML}</div>
+    <div class="game-status" id="game-status">Score: 0 / ${quizData.length}</div>
+    <button id="reset-btn">Play Again</button>
+  `;
+
+  pageContainer.appendChild(gameContainer);
+  let score = 0;
+  const dragItems = gameContainer.querySelectorAll(".drag-item");
+  const dropTargets = gameContainer.querySelectorAll(".drop-target");
+  const statusText = gameContainer.querySelector("#game-status");
+  const resetBtn = gameContainer.querySelector("#reset-btn");
+
+  dragItems.forEach(item => {
+    item.addEventListener("dragstart", (e) => {
+      e.dataTransfer.setData("text/plain", item.id);
+      item.classList.add("dragging");
+    });
+
+    item.addEventListener("dragend", () => {
+      item.classList.remove("dragging");
+    });
+  });
+
+  dropTargets.forEach(target => {
+    target.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      if (!target.classList.contains("correct")) {
+        target.classList.add("drag-over");
+      }
+    });
+
+    target.addEventListener("dragleave", () => {
+      target.classList.remove("drag-over");
+    });
+
+    target.addEventListener("drop", (e) => {
+      e.preventDefault();
+      target.classList.remove("drag-over");
+
+      if (target.classList.contains("correct")) return;
+
+      const draggedId = e.dataTransfer.getData("text/plain");
+      const draggedElem = document.getElementById(draggedId);
+      const targetAnswer = target.getAttribute("data-answer");
+
+      if (draggedId === targetAnswer) {
+        target.textContent = draggedElem.textContent;
+        target.classList.add("correct");
+        draggedElem.style.display = "none";
+        score++;
+        statusText.textContent = `Score: ${score} / ${quizData.length}`;
+
+        if (score === quizData.length) {
+          statusText.textContent = "🎉 Excellent! You are a true Miku fan! 🎉";
+          resetBtn.style.display = "inline-block";
+        }
+      } else {
+        target.style.borderColor = "#ff4757";
+        setTimeout(() => {
+          target.style.borderColor = "#39C5BB";
+        }, 600);
+      }
+    });
+  });
+  resetBtn.addEventListener("click", () => {
+    location.reload();
+  });
+});
+</script>
+	</div>
+</body>
+</html>
